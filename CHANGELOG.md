@@ -1,7 +1,11 @@
-### [1.9.2]
+### [1.9.3]
 
 -   Update alpine version 3.11
 -   Remove repositories v2.4, v2.5, v2.6, v2.7
+
+### [1.9.2]
+
+-   Add support for arm64 architecture (Howard Zhang <howard.zhang@arm.com>)
 
 ### [1.9.1]
 
