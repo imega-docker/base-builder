@@ -80,6 +80,8 @@ The available prefixes is
 -   `edge-main`
 -   `edge-testing`
 -   `edge-community`
+-   `v312`
+-   `@v312community`
 -   `v311`
 -   `v311community`
 -   `v310`
@@ -101,10 +103,7 @@ The available prefixes is
 -   `v32`
 -   `v31`
 -   `v30`
--   `v27`
--   `v26`
--   `v25`
--   `v24`
+-   `v30testing`
 
 e.g.: `php7@edge-community` from http://dl-cdn.alpinelinux.org/alpine/edge/community
 

@@ -1,5 +1,6 @@
 IMAGE=imega/base-builder
 TAG=latest
+ALPINE_VERSION=3.11
 ARCH=$(shell uname -m)
 
 ifeq ($(ARCH),aarch64)
@@ -11,7 +12,9 @@ ifeq ($(ARCH),x86_64)
 endif
 
 build:
-	@docker build -t $(IMAGE):$(TAG)-$(ARCH) .
+	@docker build --build-arg VERSION=$(TAG) \
+		--build-arg ALPINE_VERSION=$(ALPINE_VERSION) \
+		-t $(IMAGE):$(TAG)-$(ARCH) .
 
 login:
 	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
