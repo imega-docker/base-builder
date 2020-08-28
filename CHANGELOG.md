@@ -1,3 +1,8 @@
+### [1.9.2]
+
+-   Update alpine version 3.11
+-   Remove repositories v2.4, v2.5, v2.6, v2.7
+
 ### [1.9.1]
 
 -   Add support for ppc64le architecture #7 (Murilo Fossa Vicentini muvic@linux.ibm.com)
