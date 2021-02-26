@@ -1,3 +1,7 @@
+### [1.9.5]
+
+-   Add repository v3.13
+
 ### [1.9.4]
 
 -   Update alpine version 3.12

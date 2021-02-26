@@ -55,6 +55,8 @@ http://dl-cdn.alpinelinux.org/alpine/v3.12/community
 @v311community http://dl-cdn.alpinelinux.org/alpine/v3.11/community
 @v312          http://dl-cdn.alpinelinux.org/alpine/v3.12/main
 @v312community http://dl-cdn.alpinelinux.org/alpine/v3.12/community
+@v313          http://dl-cdn.alpinelinux.org/alpine/v3.13/main
+@v313community http://dl-cdn.alpinelinux.org/alpine/v3.13/community
 EOF
 
 apk --repositories-file /etc/apk/repositories --update --allow-untrusted --initdb --no-cache --root $ROOTFS add $PACKAGES
@@ -72,7 +74,7 @@ fi
 
 if [ -f /runner/entrypoint.sh ]; then
     chmod +x /runner/entrypoint.sh
-    /runner/entrypoint.sh
+    /runner/entrypoint.sh || exit 1
 fi
 
 rm -rf $ROOTFS/var/cache/apk/*

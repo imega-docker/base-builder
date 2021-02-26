@@ -80,8 +80,10 @@ The available prefixes is
 -   `edge-main`
 -   `edge-testing`
 -   `edge-community`
+-   `v313`
+-   `v313community`
 -   `v312`
--   `@v312community`
+-   `v312community`
 -   `v311`
 -   `v311community`
 -   `v310`
