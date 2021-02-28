@@ -21,8 +21,8 @@ esac
 done
 
 cat << 'EOF' > /etc/apk/repositories
-http://dl-cdn.alpinelinux.org/alpine/v3.12/main
-http://dl-cdn.alpinelinux.org/alpine/v3.12/community
+http://dl-cdn.alpinelinux.org/alpine/v3.13/main
+http://dl-cdn.alpinelinux.org/alpine/v3.13/community
 @testing      http://dl-cdn.alpinelinux.org/alpine/edge/testing
 @main         http://dl-cdn.alpinelinux.org/alpine/edge/main
 @community    http://dl-cdn.alpinelinux.org/alpine/edge/community
