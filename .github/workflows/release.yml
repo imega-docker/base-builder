@@ -29,7 +29,7 @@ jobs:
             apk add --upd alpine-sdk docker
             make test
 
-      - name: Run on architecture amd64
+      - name: Run on architecture aarch64
         uses: uraimo/run-on-arch-action@v2.1.1
         with:
           arch: aarch64
@@ -38,3 +38,8 @@ jobs:
           run: |
             apk add --upd alpine-sdk docker
             make test
+
+      - name: Run on architecture amd64
+        run: |
+          apk add --upd alpine-sdk docker
+          make test
