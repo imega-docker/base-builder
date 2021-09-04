@@ -15,4 +15,6 @@ jobs:
           arch: ppc64le
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          run: make test
+          run: |
+            apk add --upd alpine-sdk
+            make test
