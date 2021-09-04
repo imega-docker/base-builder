@@ -40,6 +40,4 @@ jobs:
             make test
 
       - name: Run on architecture amd64
-        run: |
-          apk add --upd alpine-sdk docker
-          make test
+        run: make test
