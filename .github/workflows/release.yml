@@ -19,10 +19,10 @@ jobs:
             apk add --upd alpine-sdk docker
             make test
 
-      - name: Run on architecture arm64
+      - name: Run on architecture armv7
         uses: uraimo/run-on-arch-action@v2.1.1
         with:
-          arch: arm64
+          arch: armv7
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
@@ -32,7 +32,7 @@ jobs:
       - name: Run on architecture amd64
         uses: uraimo/run-on-arch-action@v2.1.1
         with:
-          arch: amd64
+          arch: aarch64
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
