@@ -16,5 +16,5 @@ jobs:
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
-            apk add --upd alpine-sdk
+            apk add --upd alpine-sdk docker
             make test
