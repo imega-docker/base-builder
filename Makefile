@@ -1,6 +1,7 @@
+TAG=1.9.7
+ALPINE_VERSION=3.13
+
 IMAGE=imega/base-builder
-TAG=latest
-ALPINE_VERSION=3.11
 ARCH=$(shell uname -m)
 
 ifeq ($(ARCH),aarch64)
