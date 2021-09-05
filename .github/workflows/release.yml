@@ -25,6 +25,9 @@ jobs:
           arch: armv7
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          env: |
+            GOARCH="amd64"
+            GOOS="linux"
           run: |
             apk add --upd alpine-sdk docker
             make test
