@@ -16,6 +16,7 @@ jobs:
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
+            uname -a
             apk add --upd alpine-sdk docker
             make test
 
@@ -29,6 +30,7 @@ jobs:
             GOARCH: amd64
             GOOS: linux
           run: |
+            uname -a
             apk add --upd alpine-sdk docker
             make test
 
@@ -39,6 +41,7 @@ jobs:
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
+            uname -a
             apk add --upd alpine-sdk docker
             make test
 
