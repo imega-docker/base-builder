@@ -1,0 +1,55 @@
+name: Release
+
+on: push
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run on architecture ppc64le
+        uses: uraimo/run-on-arch-action@v2.1.1
+        with:
+          arch: ppc64le
+          distro: alpine_latest
+          env: |
+            DOCKER_USER: ${{ secrets.DOCKER_USER }}
+            DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            apk add --upd alpine-sdk docker
+            make release
+
+      - name: Run on architecture armv7
+        uses: uraimo/run-on-arch-action@v2.1.1
+        with:
+          arch: armv7
+          distro: alpine_latest
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          env: |
+            GOARCH: amd64
+            GOOS: linux
+          run: |
+            apk add --upd alpine-sdk docker
+            make release
+
+      - name: Run on architecture aarch64
+        uses: uraimo/run-on-arch-action@v2.1.1
+        with:
+          arch: aarch64
+          distro: alpine_latest
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            apk add --upd alpine-sdk docker
+            make release
+
+      - name: Run on architecture amd64
+        run: |
+          make release
+          make test
+
+      - name: Manifest
+        run: |
+          make release-manifest
