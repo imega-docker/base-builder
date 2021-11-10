@@ -1,3 +1,7 @@
+### [1.9.7]
+
+-   Update alpine version 3.14
+
 ### [1.9.6]
 
 -   Update alpine version 3.13

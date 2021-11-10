@@ -25,8 +25,14 @@ release: login build
 	@docker push $(IMAGE):latest-$(ARCH)
 
 release-manifest: login
-	docker manifest create $(IMAGE):$(TAG) $(IMAGE):$(TAG)-amd64 $(IMAGE):$(TAG)-ppc64le $(IMAGE):$(TAG)-arm64
-	docker manifest create $(IMAGE):latest $(IMAGE):latest-amd64 $(IMAGE):latest-ppc64le $(IMAGE):latest-arm64
+	docker manifest create $(IMAGE):$(TAG) \
+		$(IMAGE):$(TAG)-amd64 \
+		$(IMAGE):$(TAG)-ppc64le \
+		$(IMAGE):$(TAG)-arm64
+	docker manifest create $(IMAGE):latest \
+		$(IMAGE):latest-amd64 \
+		$(IMAGE):latest-ppc64le \
+		$(IMAGE):latest-arm64
 	docker manifest push $(IMAGE):$(TAG)
 	docker manifest push $(IMAGE):latest
 

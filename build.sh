@@ -21,8 +21,8 @@ esac
 done
 
 cat << 'EOF' > /etc/apk/repositories
-http://dl-cdn.alpinelinux.org/alpine/v3.13/main
-http://dl-cdn.alpinelinux.org/alpine/v3.13/community
+http://dl-cdn.alpinelinux.org/alpine/v3.14/main
+http://dl-cdn.alpinelinux.org/alpine/v3.14/community
 @testing      http://dl-cdn.alpinelinux.org/alpine/edge/testing
 @main         http://dl-cdn.alpinelinux.org/alpine/edge/main
 @community    http://dl-cdn.alpinelinux.org/alpine/edge/community
@@ -57,9 +57,14 @@ http://dl-cdn.alpinelinux.org/alpine/v3.13/community
 @v312community http://dl-cdn.alpinelinux.org/alpine/v3.12/community
 @v313          http://dl-cdn.alpinelinux.org/alpine/v3.13/main
 @v313community http://dl-cdn.alpinelinux.org/alpine/v3.13/community
+@v314          http://dl-cdn.alpinelinux.org/alpine/v3.14/main
+@v314community http://dl-cdn.alpinelinux.org/alpine/v3.14/community
+@v315          http://dl-cdn.alpinelinux.org/alpine/v3.15/main
+@v315community http://dl-cdn.alpinelinux.org/alpine/v3.15/community
 EOF
 
-apk --repositories-file /etc/apk/repositories --update --allow-untrusted --initdb --no-cache --root $ROOTFS add $PACKAGES
+apk --repositories-file /etc/apk/repositories --update --allow-untrusted \
+    --initdb --no-cache --root $ROOTFS add $PACKAGES
 
 if [[ ! -z $DEV_PACKAGES ]]; then
     apk --repositories-file /etc/apk/repositories --update add $DEV_PACKAGES
