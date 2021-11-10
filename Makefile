@@ -13,8 +13,9 @@ ifeq ($(ARCH),x86_64)
 endif
 
 build:
-	@docker build --build-arg VERSION=$(TAG) \
+	docker build --build-arg VERSION=$(TAG) \
 		--build-arg ALPINE_VERSION=$(ALPINE_VERSION) \
+		--platform $(ARCH) \
 		-t $(IMAGE):$(TAG)-$(ARCH) .
 	@docker inspect $(IMAGE):$(TAG)-$(ARCH)
 
