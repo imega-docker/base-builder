@@ -11,12 +11,12 @@ jobs:
 
       - name: Run on architecture ppc64le
         uses: uraimo/run-on-arch-action@v2.1.1
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
         with:
           arch: ppc64le
           distro: alpine_latest
+          env:
+            DOCKER_USER: ${{ secrets.DOCKER_USER }}
+            DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           run: |
             apk add --upd alpine-sdk docker
