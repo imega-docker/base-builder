@@ -15,6 +15,9 @@ jobs:
           arch: ppc64le
           distro: alpine_latest
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          env:
+            DOCKER_USER: ${{ secrets.DOCKER_USER }}
+            DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
           run: |
             apk add --upd alpine-sdk docker
             make release
