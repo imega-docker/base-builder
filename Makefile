@@ -16,6 +16,7 @@ build:
 	@docker build --build-arg VERSION=$(TAG) \
 		--build-arg ALPINE_VERSION=$(ALPINE_VERSION) \
 		-t $(IMAGE):$(TAG)-$(ARCH) .
+	@docker inspect $(IMAGE):$(TAG)-$(ARCH)
 
 login:
 	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
