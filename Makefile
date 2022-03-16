@@ -1,5 +1,5 @@
 TAG=1.9.7
-ALPINE_VERSION=3.13
+ALPINE_VERSION=3.15
 
 IMAGE=imega/base-builder
 ARCH=$(shell uname -m)
