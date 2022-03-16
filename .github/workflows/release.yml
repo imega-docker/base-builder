@@ -22,18 +22,18 @@ jobs:
             apk add --upd alpine-sdk docker
             make release
 
-      - name: Run on architecture armv7
-        uses: uraimo/run-on-arch-action@v2.1.1
-        with:
-          arch: armv7
-          distro: alpine_latest
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          env: |
-            GOARCH: amd64
-            GOOS: linux
-          run: |
-            apk add --upd alpine-sdk docker
-            make release
+      # - name: Run on architecture armv7
+      #   uses: uraimo/run-on-arch-action@v2.1.1
+      #   with:
+      #     arch: armv7
+      #     distro: alpine_latest
+      #     githubToken: ${{ secrets.GITHUB_TOKEN }}
+      #     env: |
+      #       GOARCH: amd64
+      #       GOOS: linux
+      #     run: |
+      #       apk add --upd alpine-sdk docker
+      #       make release
 
       - name: Run on architecture aarch64
         uses: uraimo/run-on-arch-action@v2.1.1
